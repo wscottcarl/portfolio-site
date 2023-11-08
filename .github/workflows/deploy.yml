@@ -22,7 +22,7 @@ jobs:
     - name: Deploy to Namecheap
       env:
         DEPLOY_KEY: ${{ secrets.NAMECHEAP_DEPLOY_KEY }}
-        HOST: ${{ secrets.NAMECHEAP_HOST_COM }}# Replace with your actual host
+        HOST: ${{ secrets.NAMECHEAP_HOST_COM }} # Replace with your actual host
         USERNAME: ${{ secrets.NAMECHEAP_SERVER_USER }}        # Replace with your actual username
         PORT: 21098                       # Default SSH port, change if different
         LOCAL_DIR: ./public_html       # Directory where your built site is output to
