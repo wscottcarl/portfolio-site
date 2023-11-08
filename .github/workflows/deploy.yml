@@ -1,0 +1,38 @@
+name: Deploy to Website
+
+on:
+  push:
+    branches:
+      - main  # Set this to your default deployment branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+# Static site while setting things up
+    - name: Build and Test
+      run: |
+        # Your build and test commands go here
+        echo "Build and test steps..."
+
+    - name: Deploy to Namecheap
+      env:
+        DEPLOY_KEY: ${{ secrets.NAMECHEAP_DEPLOY_KEY }}
+        HOST: ${{ secrets.NAMECHEAP_HOST_COM }}# Replace with your actual host
+        USERNAME: ${{ secrets.NAMECHEAP_SERVER_USER }}        # Replace with your actual username
+        PORT: 22                       # Default SSH port, change if different
+        LOCAL_DIR: ./public_html       # Directory where your built site is output to
+        REMOTE_DIR: /home/${{ secrets.NAMECHEAP_SERVER_USER }}/public_html  # Replace with your actual remote directory on the host
+      run: |
+        # Install SSH client
+        sudo apt-get update && sudo apt-get install -y openssh-client
+        # Start SSH agent
+        eval $(ssh-agent -s)
+        # Add the SSH key stored in DEPLOY_KEY to the agent store
+        ssh-add - <<< "${NAMECHEAP_DEPLOY_KEY}"
+        # Copy files to the hosting server
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no -p $PORT" $LOCAL_DIR $USERNAME@$HOST:$REMOTE_DIR
