@@ -24,7 +24,7 @@ jobs:
         DEPLOY_KEY: ${{ secrets.NAMECHEAP_DEPLOY_KEY }}
         HOST: ${{ secrets.NAMECHEAP_HOST_COM }}# Replace with your actual host
         USERNAME: ${{ secrets.NAMECHEAP_SERVER_USER }}        # Replace with your actual username
-        PORT: 22                       # Default SSH port, change if different
+        PORT: 21098                       # Default SSH port, change if different
         LOCAL_DIR: ./public_html       # Directory where your built site is output to
         REMOTE_DIR: /home/${{ secrets.NAMECHEAP_SERVER_USER }}/public_html  # Replace with your actual remote directory on the host
       run: |
