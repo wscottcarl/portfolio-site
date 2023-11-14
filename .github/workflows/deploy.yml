@@ -33,6 +33,6 @@ jobs:
         # Start SSH agent
         eval $(ssh-agent -s)
         # Add the SSH key stored in DEPLOY_KEY to the agent store
-        ssh-add - <<< "${{ secrets.NAMECHEAP_DEPLOY_KEY }}"
+        ssh-add - <<< "$DEPLOY_KEY"
         # Copy files to the hosting server
         rsync -avz -e "ssh -o StrictHostKeyChecking=no -o HostKeyAlgorithms=+ssh-rsa -p $PORT" $LOCAL_DIR $USERNAME@$HOST:$REMOTE_DIR
