@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - William Scott Carl</title>
+    <title>Resume - Scott Carl</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #333333;
+            color: #E0E0E0;
         }
         .container {
+            background-color: #3d3d3d;
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding: 20px;
+            border-radius: 8px;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+            background: #333333;
+            color: #C0C0C0;
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+        header a, header a:hover {
+            color: #F5F5F5;
         }
         header ul {
             padding: 0;
@@ -64,13 +62,12 @@
             color: #ffffff;
         }
         section#showcase {
-            min-height: 400px;
+            min-height: 250px;
             background: url('showcase.jpg') no-repeat 0 -400px;
             text-align: center;
             color: #ffffff;
         }
         section#showcase h1 {
-            margin-top: 100px;
             font-size: 55px;
             margin-bottom: 10px;
         }
@@ -89,6 +86,7 @@
                 <ul>
                     <li class="current"><a href="#showcase">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -99,7 +97,7 @@
     <section id="showcase">
         <div class="container">
             <h1>Senior Software Engineer</h1>
-            <p>Passionate about building scalable software and complex systems.</p>
+            <p>Passionate about solving complex problems with simple solutions.</p>
         </div>
     </section>
 
@@ -111,22 +109,54 @@
     <section id="skills" class="container">
         <h2>Skills</h2>
         <ul>
-            <li>Polyglot Proficient in C#, Python, JavaScript, </li>
-            <li>Experienced with AWS and Azure cloud applications</li>
-            <li>Deep understanding of RESTful API design and microservices architecture</li>
-            <li>Strong knowledge of SQL and NoSQL databases</li>
-            <li>Expertise in continuous integration and delivery (CI/CD) practices</li>
-            <li>Excellent problem-solving skills and team leadership</li>
+            <li>C#, Python, Golang</li>
+            <li>REST APIs, gRPC, Docker</li>
+            <li>PostgreSQL, SQL Server, MongoDB, Entity Framework</li>
+            <li>Microservices, Monoliths, AWS & Azure, Scrum Agile SAFe</li>
+            <li>CircleCI, Github Actions, Git, Kubernetes</li>
         </ul>
     </section>
 
     <section id="experience" class="container">
         <h2>Professional Experience</h2>
-        <!-- Repeat this block for each position -->
         <div class="job">
-            <h3>Senior Software Engineer at Integrate</h3>
-            <p class="year">2020-2023</p>
-            <p>Details about your role and achievements...</p>
+            <h3>Senior Software Engineer at Integrate (Apr 2023 – Oct 2023)</h3>
+            <ul>
+                <li>Developed robust API endpoints for seamless microservices integration.</li>
+                <li>Implemented Event-Driven architecture using Confluent Kafka.</li>
+                <li>Enhanced microservices using Onion architecture, improving code reuse and uptime.</li>
+                <li>Upheld code quality by focusing on SOLID principles during reviews.</li>
+                <li>Improved system observability and integrated telemetry.</li>
+                <li>Automated code quality checks in CI/CD pipeline.</li>
+                <li>Introduced YARP service to elevate web security.</li>
+                <li>Transitioned build system to Github Actions, reducing build times.</li>
+                <li>Mentored in C# fundamentals and SOLID principles.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Platform Engineer at Integrate (Nov 2020 – Mar 2023)</h3>
+            <ul>
+                <li>Engineered solution to gRPC service deadlocks, increasing weekly deployments.</li>
+                <li>Resolved pen-test issues using Auth0 webhooks and Kafka queues.</li>
+                <li>Revamped user login, reducing daily login requirements.</li>
+                <li>Directed technology and standards adoption, leading to significant savings.</li>
+                <li>Recovered from security breach by rotating exposed secrets.</li>
+                <li>Promoted developer transparency with OpenAPI documentation.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Software Engineering Consultant at CGI (Jan 2018 – Oct 2020)</h3>
+            <ul>
+                <li>Optimized distributed computing, reducing batch file runtime.</li>
+                <li>Developed a name search feature for customer support app.</li>
+                <li>Spearheaded technical requirements collection for new contracts.</li>
+            </ul>
         </div>
     </section>
+    
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p><a href="https://www.linkedin.com/in/wscottcarl">Find me on LinkedIn!</a></p>
+    </section>
 </body>
+</html>
